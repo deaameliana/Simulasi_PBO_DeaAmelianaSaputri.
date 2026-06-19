@@ -19,6 +19,11 @@ class PendaftaranPrestasi extends Pendaftaran {
         $diskon = 50000;
         $total = $this->biayaPendaftaranDasar - $diskon;
         return ($total > 0) ? $total : 0;
+
+        $totalBiaya = $this->biayaPendaftaranDasar - 50000;
+        
+        // Memastikan nilai tidak minus jika biaya dasar kurang dari potongan
+        return ($totalBiaya > 0) ? $totalBiaya : 0;
     }
 
     // Implementasi wajib dari metode abstrak
